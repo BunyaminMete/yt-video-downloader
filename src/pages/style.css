@@ -1,0 +1,246 @@
+body{
+    background-color: rgb(46, 74, 92);
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+.g1 { 
+    grid-area: thumbnail;
+    margin: 20px; 
+}
+
+.g2 {
+     grid-area: songcontainer; 
+
+    margin: 20px;
+}
+
+.songName{
+    padding-top: 25px;
+    max-width: 100%;
+    height: 100px;
+    background: linear-gradient(135deg, rgba(39,3,113,0.4) 11%, rgba(25,20,94,0.4) 22%, rgba(16,82,111,0.4) 36%, rgba(3,25,9,0.4) 100%);
+    text-align: center;
+    color: white;
+}
+
+button{
+    cursor: pointer;
+}
+
+.fetchButton{
+    width: 100px;
+    height: 45px;
+    background-color: rgb(53, 126, 209);
+    color: white;
+    border-radius: 5px;
+    border: none;
+    margin-top: 20px;
+    position: relative;
+    top: 0.5px;
+    margin-left: 2px;
+}
+
+.fetchButton:hover{
+    background-color: rgb(41, 88, 183);
+}
+
+.downloadButton{  
+    width: 100px;
+    height: 45px;
+    background-color: rgb(37, 150, 33);
+    color: white;
+    border-radius: 5px;
+    border: none;
+    margin-top: 20px;
+    position: relative;
+    top: 0.5px;
+    margin-left: 2px;
+}
+
+.downloadButton:hover{
+    background-color: rgb(38, 88, 38) ;
+}
+
+.video{
+    position: relative;
+    padding-top: 40px;
+}
+
+.input-box{
+    position: relative;
+    width: 650px;
+    height: 40px;
+    background-color: #555;
+    transition: 1s;
+    color: rgb(145, 145, 145);
+    margin-left: 560px;
+    border-radius: 5px;
+}
+
+
+input[type=text]:focus {
+    color: rgb(255, 255, 255);
+    background-color: #555;
+    outline-color: black;
+}
+
+
+
+@keyframes slider {
+    from{
+        margin-left: 1000px;
+    }
+    to{
+        margin-left: 0px;
+    }
+}
+
+@keyframes slider2 {
+    from{
+        margin-left: -1000px;
+    }
+    to{
+        margin-left: 0px;
+    }
+}
+
+
+.welcome{
+    position: relative;
+    left: 30vw;
+    margin-top:200px;
+    width: 900px;
+    height: 300px;
+    color: white;
+    background-color: rgb(53, 134, 255);
+    letter-spacing: 5px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    padding: 20px;
+}
+
+.successPop{
+    top: 0%;
+    left: 0%;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: 10;
+    background-color: rgb(0, 0, 0,0.7);
+}
+
+.success{
+    color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 4px;
+    font-size: 22px;
+    background-color: rgba(255, 255, 255);
+    border-radius: 3px;
+    box-shadow: rgba(93, 71, 239, 0.4) -5px 5px, rgba(127, 135, 242, 0.3) -10px 10px, rgba(123, 173, 238, 0.2) -15px 15px, rgba(134, 115, 239, 0.1) -20px 20px, rgba(110, 35, 184, 0.05) -25px 25px;
+    width: 800px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 30vw;
+    margin-top: 20vh;
+    position: relative;
+    z-index: 10;
+}
+
+.success-icon{
+    width: 120px;
+    position: absolute;
+    top: 100px;
+}
+
+.close-button{
+    background: transparent; 
+    border: none;
+    cursor: pointer;
+}
+
+.close-icon{
+    width: 30px;
+    position: relative;
+    top: -220px;
+    left: 650px;
+}
+
+.close-icon2{
+    width: 30px;
+    position: relative;
+    top: -220px;
+    left: 630px;
+}
+
+.afterdownloadText{
+    margin-top: 100px;
+}
+
+.afterdownloadText2{
+    margin-top: 0px;
+}
+
+
+.grid-container{
+    display: grid;
+    box-shadow: rgba(93, 71, 239, 0.4) -5px 5px, rgba(127, 135, 242, 0.3) -10px 10px, rgba(123, 173, 238, 0.2) -15px 15px, rgba(134, 115, 239, 0.1) -20px 20px, rgba(110, 35, 184, 0.05) -25px 25px;
+    max-width: 100%;
+    width: 650px;
+    height: 700px;
+    border-radius: 10px;
+    margin-left: 33.5%;
+    margin-top: 50px;
+    grid-template-areas: "thumbnail thumbnail"
+                         "thumbnail thumbnail"
+                         "thumbnail thumbnail"
+
+                         "songcontainer songcontainer"
+                         "songcontainer songcontainer";
+    
+    background-color: black;
+}
+
+
+
+.lds-facebook {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+  .lds-facebook div {
+    display: inline-block;
+    position: absolute;
+    left: 8px;
+    width: 16px;
+    background: black;
+    animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+  }
+  .lds-facebook div:nth-child(1) {
+    left: 8px;
+    animation-delay: -0.24s;
+  }
+  .lds-facebook div:nth-child(2) {
+    left: 32px;
+    animation-delay: -0.12s;
+  }
+  .lds-facebook div:nth-child(3) {
+    left: 56px;
+    animation-delay: 0;
+  }
+  @keyframes lds-facebook {
+    0% {
+      top: 8px;
+      height: 64px;
+    }
+    50%, 100% {
+      top: 24px;
+      height: 32px;
+    }
+  }
+  

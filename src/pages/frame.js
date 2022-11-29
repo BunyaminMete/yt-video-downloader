@@ -10,6 +10,10 @@ const SongFrame = () => {
 
   const musicURL = React.useRef();
 
+  const inputChange = () => {
+    musicURL.current.value && fetchData() 
+  }
+
   const fetchData = async () => {
     await fetch(
       `http://127.0.0.1:5000/api2/youtube?url=${musicURL.current.value}`
@@ -21,7 +25,7 @@ const SongFrame = () => {
     const embedURL = `https://www.youtube.com/embed/${splitbyword}`;
     setURL(embedURL);
   };
-
+  
   const downloadVideo = () => {
     if (musicURL.current.value) {
       setLoader(true);
@@ -38,7 +42,8 @@ const SongFrame = () => {
         setLoader(false);
       }
     });
-  };
+  }
+  ;
 
   return (
     <>
@@ -135,7 +140,8 @@ const SongFrame = () => {
         </div>
       )}
 
-      <input ref={musicURL} className="input-box" type="text" />
+      <input ref={musicURL} onChange={inputChange} className="input-box" type="text" />
+    
       <button onClick={fetchData} className="fetchButton">
         Generate
       </button>
